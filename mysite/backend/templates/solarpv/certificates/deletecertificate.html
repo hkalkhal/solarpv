@@ -1,0 +1,27 @@
+{% load static %}
+<title>Create new certificate</title>
+
+{% include "solarpv/header.html" %}
+
+
+<div class="container">
+    <div class="text-center">
+        <h1>Create client</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+{% include "solarpv/footer.html" %}

@@ -1,0 +1,189 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Product Register Page</title>
+    <style>
+        .dark {
+            color: #fff;
+            background-color: #212529;
+            border-color: #32383e;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'index' %}">PV</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">User Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'location' %}">Location Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'product' %}">Product Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'test' %}">Test Standard Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'certificate' %}">Certificate Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-center">
+            <h1>Product Register </h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form id="myform" action="{% url 'location' %}" method="POST" name="registerform">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Model Number</label>
+                            <input type="text" name="model" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Module total length x width (cm x cm)</label>
+                            <input type="number" name ="total" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Module weight (kg) </label>
+                            <input type="number" name="weight" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Individual cell Area (cm2</label>
+                            <input type="number" name ="cell_area" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cell Technology</label>
+                            <select class="form-control" required name="cell_tech">
+                                <option value="mono-Si">mono-Si</option>
+                                <option value="poly-Si">poly-Si</option>
+                                <option value="a-Si">a-Si</option>
+                                <option value="CIS">CIS</option>
+                                <option value="CdTe">CdTe</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Cell manufacturer and part #</label>
+                            <input type="text" name="cell_manufacturer" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cell manufacturing location</label>
+                            <input type="text" name ="man_location" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Total number of cells</label>
+                            <input type="Number" name="total_cells" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of cells in series </label>
+                            <input type="Number" name ="cells_series" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of series strings</label>
+                            <input type="Number" name="strings" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of bypass diodes </label>
+                            <input type="Number" name ="diodes" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bypass diode max junction temperature (°C)</label>
+                            <input type="text" name="temp" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Series fuse rating (A)</label>
+                            <input type="Number" name ="rating" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Interconnect material and supplier model no</label>
+                            <input type="text" name="interconnect" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Interconnect dimensions (mm x mm) </label>
+                            <input type="text" name ="dimensions" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Superstrate type </label>
+                            <input type="text" name="superstrate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Superstrate manufacturer and part #</label>
+                            <input type="text" name ="superstrate_no" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Substrate type</label>
+                            <input type="text" name="superstrate_type" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Frame type/material </label>
+                            <input type="text" name ="frame" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Frame adhesive </label>
+                            <input type="text" name="frame_ad" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Encapsulant type</label>
+                            <input type="text" name ="encapsulant" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Encapsulant manufacturer and part # </label>
+                            <input type="text" name="encapsulant_no" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Junction box type</label>
+                            <input type="text" name ="junction" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Junction box manufacturer and part #</label>
+                            <input type="text" name="junction_no" class="form-control" required>
+                        </div>
+                        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'solarpv/scripts.js' %}"></script>
+
+</body>
+
+</html>
+

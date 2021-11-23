@@ -1,0 +1,143 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .navbar-brand img
+  {
+    height: 100px;
+  }
+  
+  #myform
+  {
+    margin: 2em 0;
+  }
+  
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+  
+  .App-header {
+    background-color: #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .left-links, .right-links
+  {
+    margin: 1em 0;
+  }
+  
+  .left-links a.heading, .right-links a.heading
+  {
+    display: inline-block;
+    color: red;
+    text-align: center;
+    font-weight: 500;
+    margin: 1em 0;
+  }
+  
+  .left-links a.heading + a.heading::before
+  {
+    content: "|";
+    margin: 0 1em;
+  }
+  
+  .links a
+  {
+    display: block;
+    margin: 2em 0;
+  }
+  
+  .carousel-item img
+  {
+    height: 400px;
+  }
+  
+  .carousel-caption 
+  {
+    background-color: #00000096;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  
+  /* footer */
+  footer
+  {
+    background-color: #f8f9fa;
+    padding: 1em 0;
+    text-align: left;
+  }
+  
+  footer .logo img
+  {
+    height: 100px;
+  }
+  
+  .list-unstyled
+  {
+    list-style: none;
+  }
+  
+  .list-unstyled li, .align-self-center
+  {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #296575;
+  }
+  
+  .list-unstyled li a
+  {
+    color:#296575
+  }
+  
+  ul.list-unstyled.footer-menu
+  {
+    border-top: 1px solid #e4e0e0;
+  }
+  
+  ul.list-unstyled.footer-menu li
+  {
+    display: inline-block;
+  }
+  
+  ul.list-unstyled.footer-menu li + li::before
+  {
+    content: "|";
+    margin: 0 1em;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive */
+  
+  @media (max-width:768px) {
+    .App-header
+    {
+      align-items: initial;
+      justify-content: initial;
+    }
+  
+    footer
+    {
+      text-align: center;
+    }
+  }

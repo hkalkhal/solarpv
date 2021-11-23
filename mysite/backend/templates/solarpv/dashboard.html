@@ -1,0 +1,48 @@
+{% load static %}
+<title>Dashboard</title>
+
+    {% include "solarpv/header.html" %}
+
+
+    <div class="container">
+        <div class="home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Model name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Client</td>
+                                    <td><a href="{% url 'clients' %}">Show</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Location</td>
+                                    <td><a href="{% url 'locations' %}">Show</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Product</td>
+                                    <td><a href="{% url 'products' %}">Show</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Test Standard</td>
+                                    <td><a href="{% url 'standards' %}">Show</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Certificate</td>
+                                    <td><a href="{% url 'certificates' %}">Show</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+  
+    </div><!-- /.container -->
+
+    {% include "solarpv/footer.html" %}
